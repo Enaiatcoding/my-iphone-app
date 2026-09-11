@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>برای تو ❤️</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background:
+                radial-gradient(circle at 20% 20%,
+                    #ffb7ce 0%,
+                    transparent 35%),
+
+                radial-gradient(circle at 80% 80%,
+                    #bca7ff 0%,
+                    transparent 35%),
+
+                #17121d;
+
+            font-family: "Inter", sans-serif;
+
+            overflow: hidden;
+        }
+
+
+        /* iPhone */
+
+        .phone {
+
+            width: 390px;
+            height: 780px;
+
+            max-width: 94vw;
+            max-height: 94vh;
+
+            background:
+                linear-gradient(
+                    160deg,
+                    #fff8fb,
+                    #f9edf5
+                );
+
+            border-radius: 48px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 30px 80px rgba(0,0,0,.45),
+                0 0 0 8px #111;
+
+            animation: phoneIn 1s ease;
+        }
+
+        @keyframes phoneIn {
+
+            from {
+                opacity: 0;
+                transform: scale(.9) translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+
+        /* iPhone Dynamic Island */
+
+        .island {
+
+            position: absolute;
+
+            top: 12px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: 125px;
+            height: 35px;
+
+            background: #111;
+
+            border-radius: 30px;
+
+            z-index: 20;
+        }
+
+
+        /* Status bar */
+
+        .status {
+
+            position: absolute;
+
+            top: 18px;
+            left: 25px;
+            right: 25px;
+
+            display: flex;
+            justify-content: space-between;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            z-index: 10;
+        }
+
+
+        /* Content */
+
+        .content {
+
+            height: 100%;
+
+            padding: 85px 25px 35px;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            text-align: center;
+
+            overflow-y: auto;
+        }
+
+
+        .top-label {
+
+            font-size: 12px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 3px;
+
+            color: #a66b83;
+
+            margin-bottom: 12px;
+        }
+
+
+        h1 {
+
+            font-family: "DM Serif Display", serif;
+
+            font-size: 42px;
+
+            color: #8f3156;
+
+            margin-bottom: 20px;
+        }
+
+
+        .message {
+
+            font-size: 17px;
+
+            line-height: 1.75;
+
+            color: #533b46;
+
+            min-height: 220px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+
+        /* Persian */
+
+        .persian {
+
+            direction: rtl;
+
+            font-family: "Amiri", serif;
+
+            font-size: 25px;
+
+            line-height: 2;
+
+            color: #9c315b;
+
+            padding: 18px 5px;
+
+            margin: 15px 0;
+
+            border-top:
+                1px solid rgba(156,49,91,.15);
+
+            border-bottom:
+                1px solid rgba(156,49,91,.15);
+        }
+
+
+        .translation {
+
+            font-family: "Inter", sans-serif;
+
+            direction: ltr;
+
+            font-size: 13px;
+
+            color: #997582;
+
+            margin-top: 8px;
+
+            font-style: italic;
+        }
+
+
+        /* Buttons */
+
+        .buttons {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+
+        button {
+
+            border: none;
+
+            padding: 16px;
+
+            border-radius: 20px;
+
+            font-size: 16px;
+
+            font-weight: 500;
+
+            cursor: pointer;
+
+            transition: .3s;
+
+            font-family: "Inter", sans-serif;
+        }
+
+
+        .primary {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #c94f78,
+                    #9f315b
+                );
+
+            color: white;
+
+            box-shadow:
+                0 10px 25px
+                rgba(159,49,91,.25);
+        }
+
+
+        .secondary {
+
+            background: rgba(255,255,255,.75);
+
+            color: #8f3156;
+
+            border:
+                1px solid
+                rgba(143,49,86,.12);
+        }
+
+
+        button:hover {
+
+            transform: translateY(-3px);
+
+        }
+
+
+        button:active {
+
+            transform: scale(.97);
+
+        }
+
+
+        /* Bottom home bar */
+
+        .home {
+
+            width: 125px;
+            height: 5px;
+
+            background: #222;
+
+            border-radius: 10px;
+
+            margin: 20px auto 0;
+        }
+
+
+        /* Floating hearts */
+
+        .heart {
+
+            position: fixed;
+
+            pointer-events: none;
+
+            z-index: 100;
+
+            animation: floatUp linear forwards;
+        }
+
+
+        @keyframes floatUp {
+
+            from {
+
+                transform:
+                    translateY(100vh)
+                    scale(.7)
+                    rotate(0deg);
+
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            to {
+
+                transform:
+                    translateY(-20vh)
+                    scale(1.2)
+                    rotate(30deg);
+
+                opacity: 0;
+            }
+        }
+
+
+        @media(max-height:700px) {
+
+            .phone {
+                height: 95vh;
+            }
+
+            .content {
+                padding-top: 70px;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            .message {
+                font-size: 15px;
+                min-height: 180px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="phone">
+
+
+    <div class="island"></div>
+
+
+    <div class="status">
+
+        <span id="time">9:41</span>
+
+        <span>
+            ▪︎ ▪︎ 🔋
+        </span>
+
+    </div>
+
+
+    <div class="content">
+
+
+        <div>
+
+            <div class="top-label">
+                یک پیام کوچک برای تو
+            </div>
+
+
+            <h1 id="title">
+                Good Morning 🌷
+            </h1>
+
+
+            <div
+                class="message"
+                id="message">
+
+                صبح بخیر 🤍
+
+                <br><br>
+
+                I hope you woke up feeling peaceful
+                and happy today.
+
+                <br><br>
+
+                Before you start your day,
+                can I ask you something?
+
+            </div>
+
+        </div>
+
+
+        <div class="buttons"
+             id="buttons">
+
+
+            <button
+                class="primary"
+                onclick="howAreYou()">
+
+                I'm listening 🌷
+
+            </button>
+
+
+            <button
+                class="secondary"
+                onclick="howAreYou()">
+
+                What is it? 👀
+
+            </button>
+
+
+        </div>
+
+
+        <div class="home"></div>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+
+/* Current time */
+
+function updateTime() {
+
+    const now = new Date();
+
+    let hours = now.getHours();
+
+    let minutes =
+        String(now.getMinutes()).padStart(2, "0");
+
+    document.getElementById("time").innerText =
+        hours + ":" + minutes;
+}
+
+updateTime();
+
+
+
+/* First screen */
+
+function howAreYou() {
+
+    document.getElementById("title").innerHTML =
+        "How are you? 🤍";
+
+
+    document.getElementById("message").innerHTML = `
+
+        Before anything else...
+
+        <br><br>
+
+        How are you really doing today?
+
+        <br><br>
+
+        Not the automatic
+        "I'm fine."
+
+        <br>
+
+        I mean...
+
+        <br>
+
+        how is your heart today? 🌷
+
+    `;
+
+
+    document.getElementById("buttons").innerHTML = `
+
+        <button
+            class="primary"
+            onclick="feeling('good')">
+
+            I'm feeling good 😊
+
+        </button>
+
+        <button
+            class="secondary"
+            onclick="feeling('tired')">
+
+            A little tired 🌙
+
+        </button>
+
+        <button
+            class="secondary"
+            onclick="feeling('okay')">
+
+            Just okay 🤍
+
+        </button>
+
+    `;
+}
+
+
+
+/* Second screen */
+
+function feeling(type) {
+
+    document.getElementById("title").innerHTML =
+        "A Little Reminder 🌷";
+
+
+    let text = "";
+
+
+    if(type === "good") {
+
+        text = `
+
+            I'm glad you're having a good day. 😊
+
+            <br><br>
+
+            Keep that smile.
+
+            <br>
+
+            It suits you.
+
+        `;
+
+    }
+
+
+    if(type === "tired") {
+
+        text = `
+
+            Then please be gentle with yourself today. 🌙
+
+            <br><br>
+
+            You don't have to be okay
+            every second.
+
+            <br><br>
+
+            Take a breath.
+
+            <br>
+
+            You've got this. 🤍
+
+        `;
+
+    }
+
+
+    if(type === "okay") {
+
+        text = `
+
+            Then maybe today can become
+            a little better.
+
+            <br><br>
+
+            Sometimes one small message
+            is enough to change a mood. 🌷
+
+        `;
+
+    }
+
+
+    document.getElementById("message").innerHTML =
+        text;
+
+
+    document.getElementById("buttons").innerHTML = `
+
+        <button
+            class="primary"
+            onclick="poetry()">
+
+            Something beautiful for you ✨
+
+        </button>
+
+    `;
+}
+
+
+
+/* Persian poetry */
+
+function poetry() {
+
+    document.getElementById("title").innerHTML =
+        "برای تو 🤍";
+
+
+    document.getElementById("message").innerHTML = `
+
+        <div class="persian">
+
+            به جهان خرم از آنم که جهان خرم از اوست
+
+            <div class="translation">
+
+                “I am happy with the world,
+                because the world is happy with her.”
+
+                <br><br>
+
+                — سعدی • Saadi
+
+            </div>
+
+        </div>
+
+
+        Some words have a beautiful way
+        of making you stop for a moment.
+
+        <br><br>
+
+        So I wanted to leave one here for you.
+
+        <br><br>
+
+        Nothing complicated.
+
+        <br>
+
+        Just something beautiful
+        for a beautiful morning. 🌷
+
+    `;
+
+
+    document.getElementById("buttons").innerHTML = `
+
+        <button
+            class="primary"
+            onclick="finalMessage()">
+
+            One last message 💌
+
+        </button>
+
+    `;
+}
+
+
+
+/* Final message */
+
+function finalMessage() {
+
+    document.getElementById("title").innerHTML =
+        "Just For Your Smile ❤️";
+
+
+    document.getElementById("message").innerHTML = `
+
+        I don't know what today
+        has planned for you...
+
+        <br><br>
+
+        But I hope there are
+        little moments that make you smile.
+
+        <br><br>
+
+        And if this tiny message
+        became one of them...
+
+        <br><br>
+
+        then I'm happy I made it.
+
+        <br><br>
+
+        You deserve a beautiful day.
+
+        <br>
+
+        Don't forget that. 🌷
+
+        <div class="persian">
+
+            دلت که گرفت، دل من هم می‌گیرد
+
+            <div class="translation">
+
+                “When your heart feels heavy,
+                mine feels it too.”
+
+                <br><br>
+
+                — Persian-inspired original line
+
+            </div>
+
+        </div>
+
+        Take care of yourself today. 🤍
+
+        <br><br>
+
+        Maybe I'll see that smile later. 😊
+
+    `;
+
+
+    document.getElementById("buttons").innerHTML = `
+
+        <button
+            class="primary"
+            onclick="makeHearts()">
+
+            Have a beautiful day 🌷
+
+        </button>
+
+    `;
+
+}
+
+
+
+/* Hearts */
+
+function makeHearts() {
+
+    for(let i = 0; i < 35; i++) {
+
+        setTimeout(() => {
+
+            const heart =
+                document.createElement("div");
+
+            heart.className = "heart";
+
+            const symbols = [
+                "❤️",
+                "💕",
+                "🌷",
+                "🤍",
+                "✨"
+            ];
+
+            heart.innerHTML =
+                symbols[
+                    Math.floor(
+                        Math.random() *
+                        symbols.length
+                    )
+                ];
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+            heart.style.fontSize =
+                (15 + Math.random() * 25) + "px";
+
+            heart.style.animationDuration =
+                (3 + Math.random() * 3) + "s";
+
+
+            document.body.appendChild(heart);
+
+
+            setTimeout(() => {
+
+                heart.remove();
+
+            }, 7000);
+
+        }, i * 100);
+
+    }
+
+}
+
+
+</script>
+
+</body>
+
+</html>
